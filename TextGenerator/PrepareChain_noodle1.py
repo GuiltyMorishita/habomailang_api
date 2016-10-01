@@ -233,7 +233,8 @@ class TestFunctions(unittest.TestCase):
 if __name__ == '__main__':
     # unittest.main()
 
-    text = u"""少しムチとした食感のもの。
+    text = u"""
+    少しムチとした食感のもの。
     カタメすぎる仕上がり。
     プルプルすぎる食感のもの。
     柔らかめすぎる仕上がり。
