@@ -14,7 +14,7 @@ class ApiController < ApplicationController
     pork_sentence = ""
 
     # pythonスクリプトの実行
-    system("python #{Rails.root}/TextGenerator/PrepareChain.py")
+    system("python #{Rails.root}/TextGenerator/PrepareChain_noodle#{noodle_level}.py")
     system("python #{Rails.root}/TextGenerator/GenerateText.py")
 
     File.open('output.txt') do |file|
@@ -23,7 +23,7 @@ class ApiController < ApplicationController
     end
 
     # pythonスクリプトの実行
-    system("python #{Rails.root}/TextGenerator/PrepareChain1.py")
+    system("python #{Rails.root}/TextGenerator/PrepareChain_soup#{soup_level}.py")
     system("python #{Rails.root}/TextGenerator/GenerateText.py")
 
     File.open('output.txt') do |file|
@@ -32,7 +32,7 @@ class ApiController < ApplicationController
     end
 
     # pythonスクリプトの実行
-    system("python #{Rails.root}/TextGenerator/PrepareChain2.py")
+    system("python #{Rails.root}/TextGenerator/PrepareChain_pork#{pork_level}.py")
     system("python #{Rails.root}/TextGenerator/GenerateText.py")
 
     File.open('output.txt') do |file|
