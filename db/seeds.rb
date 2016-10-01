@@ -1,22 +1,112 @@
-levels = [1, 2, 3, 4, 5]
+# yml = File.read("#{Rails.root}/db/tweet/tweet.yml")
+# data = YAML.load(yml)
 
-50.times do
-  levels.each do |level|
-    sentence = Faker::Lorem.sentence(3)
-    Noodle.create(level: level, sentence: sentence)
-  end
-end
+Noodle.create(level: 1, sentence: "ムチとした食感のもの。")
+Noodle.create(level: 1, sentence: "カタメな仕上がり。")
+Noodle.create(level: 1, sentence: "プルプルな食感のもの。")
+Noodle.create(level: 1, sentence: "柔らかめな仕上がり。")
+Noodle.create(level: 1, sentence: "ズババと啜れるもの。")
+Noodle.create(level: 1, sentence: "汁染みた仕上がり。")
+Noodle.create(level: 2, sentence: "カタメな食感のもの。ウマい。")
+Noodle.create(level: 2, sentence: "モソとした素朴な食感俺好み。")
+Noodle.create(level: 2, sentence: "プルプル食感、俺好み。")
+Noodle.create(level: 2, sentence: "カタメな仕上がりのもの。ウンメ〜。")
+Noodle.create(level: 2, sentence: "いつもより柔らかめのもの。")
+Noodle.create(level: 2, sentence: "柔らかめな極太麺、液体アブラ纏ってウマい。")
+Noodle.create(level: 3, sentence: "こりゃウマい！メッチャ柔らかプッルプル。")
+Noodle.create(level: 3, sentence: "柔らかめで醤油染みててウマい。")
+Noodle.create(level: 3, sentence: "コレ好きィ！味染みまくりィ！")
+Noodle.create(level: 3, sentence: "プリとした食感、ズババと啜れる俺好みのもの。")
+Noodle.create(level: 3, sentence: "クッニュクニュ。アブラ纏ってメッチャウマ。")
+Noodle.create(level: 3, sentence: "ウッメェェッ！柔らかくて味染み感バツグンっ！")
+Noodle.create(level: 4, sentence: "柔らか嬉しい、喰い出したらとまんないもの！")
+Noodle.create(level: 4, sentence: "柔らかくてウッメェェッ！")
+Noodle.create(level: 4, sentence: "ホクと柔らか味染みててウンメ〜ッ！")
+Noodle.create(level: 4, sentence: "ユッルユルに柔らか激しく俺好みのもの。")
+Noodle.create(level: 4, sentence: "醤油染みててプルプル食感の太麺、メッチャウンメ〜ッ！")
+Noodle.create(level: 4, sentence: "液体アブラ甘んめ〜っ！醤油効いてウンメ〜ッ！")
+Noodle.create(level: 5, sentence: "このクニュ感、この柔らかさ、至高過ぎィ！")
+Noodle.create(level: 5, sentence: "クニュッと柔らか、ふあとほどける口溶け、最ッ高でしょ！")
+Noodle.create(level: 5, sentence: "柔らか！味染み！アブラ絡んで、ウッメェェッ！")
+Noodle.create(level: 5, sentence: "ムチとした麺、ザクと啜ってウッメェェッ！夢中で掻き込む。")
+Noodle.create(level: 5, sentence: "柔らかな仕上がり嬉しい、味メッチャ染みた最ッ高にウマい麺。")
+Noodle.create(level: 5, sentence: "汁染みた麺ハフハフ啜る。ウマ過ぎィ！")
 
-50.times do
-  levels.each do |level|
-    sentence = Faker::Lorem.sentence(3)
-    Soup.create(level: level, sentence: sentence)
-  end
-end
+Soup.create(level: 1, sentence: "いささかウスメ。")
+Soup.create(level: 1, sentence: "いささかカラすぎ。")
+Soup.create(level: 1, sentence: "いささかウスメも、卓上醤油で俺好みに調整可能。")
+Soup.create(level: 1, sentence: "甘みとウマ味あと少し。")
+Soup.create(level: 1, sentence: "焦げ味感じるもの。")
+Soup.create(level: 1, sentence: "肉そば風味のもの。")
+Soup.create(level: 2, sentence: "ミルキィなニンニク溶けてウマい汁。")
+Soup.create(level: 2, sentence: "生姜の風味効いたウマい汁。")
+Soup.create(level: 2, sentence: "コレ好きィ！塩気効いた汁。")
+Soup.create(level: 2, sentence: "コクあってウッメェェッ！")
+Soup.create(level: 2, sentence: "ウマ味たっぷりの汁。ウッメェェッ！")
+Soup.create(level: 2, sentence: "ニンニク溶けてウマし。卓上醤油いい仕事。")
+Soup.create(level: 3, sentence: "メッチャ濃いッ！ウマ味極めし汁。")
+Soup.create(level: 3, sentence: "甘くてウッメェェッ！")
+Soup.create(level: 3, sentence: "醤油効いたコクのある汁ウンメ〜。")
+Soup.create(level: 3, sentence: "ウマ味と醤油効いて、メッチャウマ。")
+Soup.create(level: 3, sentence: "辛味の中にウマ味ありッ！")
+Soup.create(level: 3, sentence: "ウマ味効いたミルキィ汁ウンメ〜ッ！")
+Soup.create(level: 4, sentence: "液体アブラ効いててウンメ〜！")
+Soup.create(level: 4, sentence: "ウッメェェッ！ミルキィ汁に玉子メッチャ合う！")
+Soup.create(level: 4, sentence: "ウッメェェッ！肉のウマ味と液体アブラの甘み効いたメチャウマ汁。")
+Soup.create(level: 4, sentence: "濃いめに効いた醤油で堪らなくウッメェェッ！")
+Soup.create(level: 4, sentence: "ウッメェェッ！生姜ふあと香る堪らなく俺好みな汁。")
+Soup.create(level: 4, sentence: "熱ッツ、ウッメェッ！言いながら飲んだ。")
+Soup.create(level: 5, sentence: "肉のウマ味爆発ッ！奮える汁っ！！")
+Soup.create(level: 5, sentence: "一口で虜ッ！恍惚テイストッ！")
+Soup.create(level: 5, sentence: "本店彷彿とさせるウマさ極めた汁ウッメェェッ！")
+Soup.create(level: 5, sentence: "液体アブラ効いてて激しくウッメェェッ！")
+Soup.create(level: 5, sentence: "コレメッチャ好きィ！塩気効いた汁で神域。")
+Soup.create(level: 5, sentence: "し、神域ィ！！二郎観大幅に書き換わる衝撃的ウマ味、奮えながら貪る。")
 
-50.times do
-  levels.each do |level|
-    sentence = Faker::Lorem.sentence(3)
-    Pork.create(level: level, sentence: sentence)
-  end
-end
+Pork.create(level: 1, sentence: "プルンと柔らかいもの。")
+Pork.create(level: 1, sentence: "しっとりしたもの。")
+Pork.create(level: 1, sentence: "肉肉しい仕上がり。")
+Pork.create(level: 1, sentence: "トロと柔らかなもの。")
+Pork.create(level: 1, sentence: "フッワフワに柔らかさ。")
+Pork.create(level: 1, sentence: "カラメの塩気で脂身の甘み際立つもの。")
+Pork.create(level: 2, sentence: "肉ホロな食感のもの。")
+Pork.create(level: 2, sentence: "脂身甘くてウンメ〜。")
+Pork.create(level: 2, sentence: "ミチとした肉々しい食感のもの。")
+Pork.create(level: 2, sentence: "プリップリでゴッロゴロ。")
+Pork.create(level: 2, sentence: "フワフワで脂身甘いもの。")
+Pork.create(level: 2, sentence: "トロとしてウマい。")
+Pork.create(level: 3, sentence: "プリリとした豚、メッチャウマ。")
+Pork.create(level: 3, sentence: "ほぐれる食感俺好み。")
+Pork.create(level: 3, sentence: "トッロトロ！くち溶けふわりブタ。")
+Pork.create(level: 3, sentence: "大ぶりで柔らか、ミチとした食感のブタ。")
+Pork.create(level: 3, sentence: "塩気効いたブタ、メッチャ好きィ！")
+Pork.create(level: 3, sentence: "強めな塩気の俺好みのもの。")
+Pork.create(level: 4, sentence: "脂身トロォ、肉ホロッ！ドッサリ！")
+Pork.create(level: 4, sentence: "ドッサリ。脂身甘くてウンメ〜ッ！")
+Pork.create(level: 4, sentence: "ウッメェェッ！神域のホロ肉。")
+Pork.create(level: 4, sentence: "ウッメェェッ！フワフワで脂身甘い神域ぶた。")
+Pork.create(level: 4, sentence: "ウンメ〜ッ！ウマ味に夢中、思わず飲んだ。")
+Pork.create(level: 4, sentence: "端豚、巻豚、神域ィ！")
+Pork.create(level: 5, sentence: "端ブタ有りッ！ホッロホロ！完飲。")
+Pork.create(level: 5, sentence: "ほぐれる食感、ブタ切れが無念に思えるもの。完飲。")
+Pork.create(level: 5, sentence: "塩気とアブラの興奮仕様ッ！我忘れて貪り飲んだ。KAN-IN。")
+Pork.create(level: 5, sentence: "プリと柔らか、味染みた最ッ高にウマいぶた。")
+Pork.create(level: 5, sentence: "ウッメェェッ！神域で安定。")
+Pork.create(level: 5, sentence: "しっとりムッチリ最ッ高！我忘れて貪れるもの。")
+
+
+# data.noodle.each |noodle|
+#   noodle.level
+# 50.times do
+#   levels.each do |level|
+#     # sentence = Faker::Lorem.sentence(3)
+#     Soup.create(level: level, sentence: sentence)
+#   end
+# end
+#
+# 50.times do
+#   levels.each do |level|
+#     # sentence = Faker::Lorem.sentence(3)
+#     Pork.create(level: level, sentence: sentence)
+#   end
+# end
