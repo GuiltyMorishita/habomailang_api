@@ -49,7 +49,7 @@ class ApiController < ApplicationController
     sentence += "完飲。"
 
 
-    request = { sentence: sentence }
+    request = JSON.generate({ sentence: sentence })
     render :json => request
   end
 

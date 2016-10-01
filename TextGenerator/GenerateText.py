@@ -158,6 +158,6 @@ class GenerateText(object):
 if __name__ == '__main__':
     generator = GenerateText()
     with open("output.txt", "w") as file:
-        sentence = generator.generate().encode('utf-8')
+        sentence = generator.generate().encode('utf-8') + "。"
         sentence = sentence[:sentence.index("。")] + "。"
         file.write(sentence)
