@@ -3,20 +3,26 @@ class ApiController < ApplicationController
 
     shop_name = params[:shop_name]
     menu = params[:menu]
+    topping = params[:topping]
     price = params[:price]
+    noodle_level = params[:noodle_level]
+    soup_level = params[:soup_level]
+    pork_level = params[:pork_level]
 
-    noodle = Noodle.where(level: 1).limit(1)
-    soup = Soup.where(level: 1).limit(1)
-    pork = Pork.where(level: 1).limit(1)
+    noodle = Noodle.where(level: noodle_level).sample
+    soup = Soup.where(level: soup_level).sample
+    pork = Pork.where(level: pork_level).sample
 
     youbi = %w[日 月 火 水 木 金 土]
     date = Date.today.to_era("%O%E年%m月%d日") + youbi[Date.today.wday] + "曜日"
-    sentence = date + "、" + shop_name + "、" + menu + " " + price + "YEN\n"
-    sentence += noodle.first.sentence + "\n"
-    sentence += soup.first.sentence + "\n"
-    sentence += pork.first.sentence
+    sentence = date + "、" + shop_name + "、" + menu + " " + topping + " " + price + "YEN\n"
+    sentence += noodle.sentence + "\n"
+    sentence += soup.sentence + "\n"
+    sentence += pork.sentence + "\n"
+    sentence += "完飲。"
 
-    render :json => sentence
+    request = { sentence: sentence }
+    render :json => request
   end
 
 
