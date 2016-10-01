@@ -9,17 +9,45 @@ class ApiController < ApplicationController
     soup_level = params[:soup_level]
     pork_level = params[:pork_level]
 
-    noodle = Noodle.where(level: noodle_level).sample
-    soup = Soup.where(level: soup_level).sample
-    pork = Pork.where(level: pork_level).sample
+    noodle_sentence = ""
+    soup_sentence = ""
+    pork_sentence = ""
+
+    # pythonスクリプトの実行
+    system("python #{Rails.root}/TextGenerator/PrepareChain.py")
+    system("python #{Rails.root}/TextGenerator/GenerateText.py")
+
+    File.open('output.txt') do |file|
+      # labmenには読み込んだ行が含まれる
+      noodle_sentence = "麺、" + file.readline
+    end
+
+    # pythonスクリプトの実行
+    system("python #{Rails.root}/TextGenerator/PrepareChain1.py")
+    system("python #{Rails.root}/TextGenerator/GenerateText.py")
+
+    File.open('output.txt') do |file|
+      # labmenには読み込んだ行が含まれる
+      soup_sentence = "汁、" + file.readline
+    end
+
+    # pythonスクリプトの実行
+    system("python #{Rails.root}/TextGenerator/PrepareChain2.py")
+    system("python #{Rails.root}/TextGenerator/GenerateText.py")
+
+    File.open('output.txt') do |file|
+      # labmenには読み込んだ行が含まれる
+      pork_sentence = "豚、" + file.readline
+    end
 
     youbi = %w[日 月 火 水 木 金 土]
     date = Date.today.to_era("%O%E年%m月%d日") + youbi[Date.today.wday] + "曜日"
     sentence = date + "、" + shop_name + "、" + menu + " " + topping + " " + price + "YEN\n"
-    sentence += noodle.sentence + "\n"
-    sentence += soup.sentence + "\n"
-    sentence += pork.sentence + "\n"
+    sentence += noodle_sentence + "\n"
+    sentence += soup_sentence + "\n"
+    sentence += pork_sentence + "\n"
     sentence += "完飲。"
+
 
     request = { sentence: sentence }
     render :json => request
